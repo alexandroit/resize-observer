@@ -1,6 +1,6 @@
 {
   "name": "@revivejs/resize-observer",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "Polyfills the ResizeObserver API and supports box size options from the latest spec",
   "main": "lib/exports/resize-observer.umd.js",
   "module": "lib/exports/resize-observer.js",
@@ -72,10 +72,9 @@
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
-    "@typescript-eslint/eslint-plugin": "^5.33.1",
-    "@typescript-eslint/parser": "^5.33.1",
     "esbuild": "^0.25.11",
-    "eslint": "^8.22.0",
+    "eslint": "^9.39.4",
+    "typescript-eslint": "^8.58.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "jest-junit": "^14.0.0",

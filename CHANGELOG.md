@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.0.3 - 2026-04-03
+
+- upgraded ESLint from 8 to 9 (flat config)
+- replaced `@typescript-eslint/eslint-plugin` + `@typescript-eslint/parser` v5 with `typescript-eslint` v8 (unified package, ESLint 9 compatible)
+- migrated lint config from legacy `.eslintrc.json` to `eslint.config.js` (flat config)
+- removed `@typescript-eslint/indent` rule (removed upstream in v6; code style unchanged)
+- removed stale inline `// eslint-disable-next-line` directives from tests (now handled at config level)
+- fixed test bug: `toBeTruthy` / `toBeFalsy` referenced as properties instead of called as functions in `dom-rect-read-only.test.ts`
+- no public API or output changes
+
 ## 4.0.2 - 2026-04-03
 
 - upgraded TypeScript from 4.7 to 5.9 (build toolchain)

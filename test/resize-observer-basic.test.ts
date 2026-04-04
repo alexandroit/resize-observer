@@ -32,7 +32,6 @@ describe('Basics', (): void => {
 
   test('Throw error when no callback is passed to constructor', (): void => {
     const fn = (): void => {
-      // eslint-disable-next-line
       // @ts-ignore
       new ResizeObserver();
     };
@@ -41,7 +40,6 @@ describe('Basics', (): void => {
 
   test('Throw error when an invalid callback is passed to constructor', (): void => {
     const fn = (): void => {
-      // eslint-disable-next-line
       // @ts-ignore
       new ResizeObserver(1);
     };
@@ -51,7 +49,6 @@ describe('Basics', (): void => {
   test('Throw error when no target is passed to observe()', (): void => {
     const fn = (): void => {
       ro = new ResizeObserver((): void => { /* do nothing */ });
-      // eslint-disable-next-line
       // @ts-ignore
       ro.observe();
     };
@@ -61,7 +58,6 @@ describe('Basics', (): void => {
   test('Throw error when an invalid target is passed to observe()', (): void => {
     const fn = (): void => {
       ro = new ResizeObserver((): void => { /* do nothing */ });
-      // eslint-disable-next-line
       // @ts-ignore
       ro.observe(1);
     };
@@ -71,7 +67,6 @@ describe('Basics', (): void => {
   test('Throw error when a null target is passed to observe()', (): void => {
     const fn = (): void => {
       ro = new ResizeObserver((): void => { /* do nothing */ });
-      // eslint-disable-next-line
       // @ts-ignore
       ro.observe(null);
     };
@@ -81,7 +76,6 @@ describe('Basics', (): void => {
   test('Throw error when no target is passed to unobserve()', (): void => {
     const fn = (): void => {
       ro = new ResizeObserver((): void => { /* do nothing */ });
-      // eslint-disable-next-line
       // @ts-ignore
       ro.unobserve();
     };
@@ -91,7 +85,6 @@ describe('Basics', (): void => {
   test('Throw error when an invalid target is passed to unobserve()', (): void => {
     const fn = (): void => {
       ro = new ResizeObserver((): void => { /* do nothing */ });
-      // eslint-disable-next-line
       // @ts-ignore
       ro.unobserve(1);
     };

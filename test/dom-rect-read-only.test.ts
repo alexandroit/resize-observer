@@ -50,9 +50,9 @@ describe('DOMRectReadOnly', (): void => {
   });
   it('Should support toJSON()', (): void => {
     const rect = new DOMRectReadOnly(5, 10, 15, 20);
-    expect('toJSON' in rect).toBeTruthy;
+    expect('toJSON' in rect).toBeTruthy();
     const rectJSON = rect.toJSON();
-    expect('toJSON' in rectJSON).toBeFalsy;
+    expect('toJSON' in rectJSON).toBeFalsy();
     expect(rectJSON).toMatchObject({
       x: 5,
       y: 10,
