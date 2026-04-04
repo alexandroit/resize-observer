@@ -1,221 +1,159 @@
-<p align="center">
-  <img width="160" src="https://user-images.githubusercontent.com/1519516/68546625-51e0f680-03d0-11ea-9955-9f0e1964ba0c.png" />
-</p>
+# @revivejs/resize-observer
 
-<h1 align="center">Resize Observer</h1>
+> A maintained ResizeObserver ponyfill for browser applications, with support for content-box, border-box, and device-pixel-content-box observations.
 
-<p align="center">
-  <img src="https://img.shields.io/circleci/project/github/juggle/resize-observer/v3.svg?logo=circleci&style=for-the-badge" />
-  <img src="https://img.shields.io/coveralls/github/juggle/resize-observer/v3.svg?logoColor=white&style=for-the-badge" />
-  <img src="https://img.shields.io/bundlephobia/minzip/@juggle/resize-observer.svg?colorB=%233399ff&style=for-the-badge" />
-  <img src="https://img.shields.io/npm/l/@juggle/resize-observer.svg?colorB=%233399ff&style=for-the-badge" />
-</p>
+[![npm version](https://img.shields.io/npm/v/@revivejs/resize-observer.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/resize-observer)
+[![npm downloads](https://img.shields.io/npm/dt/@revivejs/resize-observer.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/resize-observer)
+[![npm monthly](https://img.shields.io/npm/dm/@revivejs/resize-observer.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/resize-observer)
+[![license](https://img.shields.io/npm/l/@revivejs/resize-observer.svg?style=flat-square)](https://github.com/alexandroit/resize-observer/blob/HEAD/LICENSE)
+[![TypeScript 4.7+](https://img.shields.io/badge/TypeScript-4.7%2B-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
+[![GitHub stars](https://img.shields.io/github/stars/alexandroit/resize-observer.svg?style=flat-square)](https://github.com/alexandroit/resize-observer/stargazers)
+
+**[Documentation & Demo](https://alexandroit.github.io/resize-observer/)** | **[Repository](https://github.com/alexandroit/resize-observer)** | **[npm](https://www.npmjs.com/package/@revivejs/resize-observer)** | **[Changelog](https://github.com/alexandroit/resize-observer/blob/HEAD/CHANGELOG.md)**
 
 ---
 
-A minimal library which polyfills the **ResizeObserver** API and is entirely based on the latest [Specification](https://www.w3.org/TR/resize-observer/).
+> **Credits:** Original project by Juggle.  
+> Maintained and modernized by Revivejs.
 
-It immediately detects when an element resizes and provides accurate sizing information back to the handler. Check out the [Example Playground](//juggle.studio/resize-observer) for more information on usage and performance.
+---
 
-> The latest [Resize Observer specification](https://www.w3.org/TR/resize-observer/) is not yet finalised and is subject to change.
-> Any drastic changes to the specification will bump the major version of this library, as there will likely be breaking changes. Check the [release notes](https://github.com/juggle/resize-observer/releases) for more information.
+## Why this package?
 
+`@revivejs/resize-observer` preserves the proven upstream ResizeObserver polyfill while updating the package metadata, docs, demo pipeline, and repository automation for the current maintainer. It stays framework-agnostic, so Angular, React, Vue, Web Components, and plain browser apps can all use the same entry point.
 
-## Installation
-``` shell
-npm i @juggle/resize-observer
-```
-
-## Basic usage
-``` js
-import { ResizeObserver } from '@juggle/resize-observer';
-
-const ro = new ResizeObserver((entries, observer) => {
-  console.log('Body has resized!');
-  observer.disconnect(); // Stop observing
-});
-
-ro.observe(document.body); // Watch dimension changes on body
-```
-This will use the [ponyfilled](https://github.com/sindresorhus/ponyfill) version of **ResizeObserver**, even if the browser supports **ResizeObserver** natively.
-
-## Watching multiple elements
-``` js
-import { ResizeObserver } from '@juggle/resize-observer';
-
-const ro = new ResizeObserver((entries, observer) => {
-  console.log('Elements resized:', entries.length);
-  entries.forEach((entry, index) => {
-    const { inlineSize: width, blockSize: height } = entry.contentBoxSize[0];
-    console.log(`Element ${index + 1}:`, `${width}x${height}`);
-  });
-});
-
-const els = document.querySelectorAll('.resizes');
-[...els].forEach(el => ro.observe(el)); // Watch multiple!
-```
-
-## Watching different box sizes
-
-The latest standards allow for watching different box sizes. The box size option can be specified when observing an element. Options include `border-box`, `device-pixel-content-box` and `content-box` (default).
-``` js
-import { ResizeObserver } from '@juggle/resize-observer';
-
-const ro = new ResizeObserver((entries, observer) => {
-  console.log('Elements resized:', entries.length);
-  entries.forEach((entry, index) => {
-    const [size] = entry.borderBoxSize;
-    console.log(`Element ${index + 1}:`, `${size.inlineSize}x${size.blockSize}`);
-  });
-});
-
-// Watch border-box
-const observerOptions = {
-  box: 'border-box'
-};
-
-const els = document.querySelectorAll('.resizes');
-[...els].forEach(el => ro.observe(el, observerOptions));
-```
-*From the spec:*
-> The box size properties are exposed as sequences in order to support elements that have multiple fragments, which occur in [multi-column](https://www.w3.org/TR/css3-multicol/#) scenarios. However the current definitions of content rect and border box do not mention how those boxes are affected by multi-column layout. In this spec, there will only be a single ResizeObserverSize returned in the sequences, which will correspond to the dimensions of the first column. A future version of this spec will extend the returned sequences to contain the per-fragment size information.
-
-## Using the legacy version (`contentRect`)
-
-Early versions of the API return a `contentRect`. This is still made available for backwards compatibility.
-
-``` js
-import { ResizeObserver } from '@juggle/resize-observer';
-
-const ro = new ResizeObserver((entries, observer) => {
-  console.log('Elements resized:', entries.length);
-  entries.forEach((entry, index) => {
-    const { width, height } = entry.contentRect;
-    console.log(`Element ${index + 1}:`, `${width}x${height}`);
-  });
-});
-
-const els = document.querySelectorAll('.resizes');
-[...els].forEach(el => ro.observe(el));
-```
-
-
-## Switching between native and polyfilled versions
-
-You can check to see if the native version is available and switch between this and the polyfill to improve performance on browsers with native support.
-
-``` js
-import { ResizeObserver as Polyfill } from '@juggle/resize-observer';
-
-const ResizeObserver = window.ResizeObserver || Polyfill;
-
-// Uses native or polyfill, depending on browser support.
-const ro = new ResizeObserver((entries, observer) => {
-  console.log('Something has resized!');
-});
-```
-
-To improve this even more, you could use dynamic imports to only load the file when the polyfill is required.
-
-``` js
-(async () => {
-  if ('ResizeObserver' in window === false) {
-    // Loads polyfill asynchronously, only if required.
-    const module = await import('@juggle/resize-observer');
-    window.ResizeObserver = module.ResizeObserver;
-  }
-  // Uses native or polyfill, depending on browser support.
-  const ro = new ResizeObserver((entries, observer) => {
-    console.log('Something has resized!');
-  });
-})();
-```
-
-> Browsers with native support may be behind on the latest specification.
-> Use `entry.contentRect` when switching between native and polyfilled versions.
-
-
-## Resize loop detection
-
-Resize Observers have inbuilt protection against infinite resize loops.
-
-If an element's observed box size changes again within the same resize loop, the observation will be skipped and an error event will be dispatched on the window. Elements with undelivered notifications will be considered for delivery in the next loop.
-
-```js
-import { ResizeObserver } from '@juggle/resize-observer';
-
-const ro = new ResizeObserver((entries, observer) => {
-  // Changing the body size inside of the observer
-  // will cause a resize loop and the next observation will be skipped
-  document.body.style.width = '50%';
-});
-
-// Listen for errors
-window.addEventListener('error', e => console.log(e.message));
-
-// Observe the body
-ro.observe(document.body);
-```
-
-## Notification Schedule
-Notifications are scheduled after all other changes have occurred and all other animation callbacks have been called. This allows the observer callback to get the most accurate size of an element, as no other changes should occur in the same frame.
-
-![resize observer notification schedule](https://user-images.githubusercontent.com/1519516/52825568-20433500-30b5-11e9-9854-4cee13a09a7d.jpg)
-
-
-
-## How are differences detected?
-
-To prevent constant polling, every frame. The DOM is queried whenever an event occurs which could cause an element to change its size. This could be when an element is clicked, a DOM Node is added, or, when an animation is running.
-
-To cover these scenarios, there are two types of observation. The first is to listen to specific DOM events, including `resize`, `mousedown` and `focus` to name a few. The second is to listen for any DOM mutations that occur. This detects when a DOM node is added or removed, an attribute is modified, or, even when some text has changed.
-
-This allows for greater idle time, when the application itself is idle.
-
+---
 
 ## Features
 
-- Inbuilt resize loop protection.
-- Supports pseudo classes `:hover`, `:active` and `:focus`.
-- Supports transitions and animations, including infinite and long-running.
-- Detects changes which occur during animation frame.
-- Includes support for latest draft spec - observing different box sizes.
-- Polls only when required, then shuts down automatically, reducing CPU usage.
-- Zero delay system - Notifications are batched and delivered immediately, before the next paint.
-
-
-## Limitations
-
-- Transitions with initial delays cannot be detected.*
-- Animations and transitions with long periods of no change, will not be detected.*
-- Style changes from dev tools will only be noticed if they are inline styles.*
-
-
-## Tested Browsers
-
-[chrome]: https://github.com/alrra/browser-logos/raw/master/src/chrome/chrome_64x64.png
-[safari]: https://github.com/alrra/browser-logos/raw/master/src/safari/safari_64x64.png
-[safari-ios]: https://github.com/alrra/browser-logos/raw/master/src/safari-ios/safari-ios_64x64.png
-[ff]: https://github.com/alrra/browser-logos/raw/master/src/firefox/firefox_64x64.png
-[opera]: https://github.com/alrra/browser-logos/raw/master/src/opera/opera_64x64.png
-[opera-mini]: https://github.com/alrra/browser-logos/raw/master/src/opera-mini/opera-mini_64x64.png
-[edge_12-18]: https://github.com/alrra/browser-logos/raw/master/src/archive/edge_12-18/edge_12-18_64x64.png
-[edge]: https://github.com/alrra/browser-logos/raw/master/src/edge/edge_64x64.png
-[samsung]: https://github.com/alrra/browser-logos/raw/master/src/samsung-internet/samsung-internet_64x64.png
-[ie]: https://github.com/alrra/browser-logos/raw/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_64x64.png
-
-### Desktop
-| ![chrome][chrome] | ![safari][safari] | ![ff][ff] | ![opera][opera] | ![edge][edge] | ![edge][edge_12-18] | ![IE][ie] |
-|--------|--------|---------|-------|------|------------|---------------------------------------|
-| Chrome | Safari | Firefox | Opera | Edge | Edge 12-18 | IE11<br/>IE 9-10 (with polyfills)\*\* |
-
-### Mobile
-| ![chrome][chrome] | ![safari][safari] | ![ff][ff] | ![opera][opera] | ![opera mini][opera-mini] | ![edge][edge_12-18] | ![samsung internet][samsung] |
-|--------|--------|---------|-------|------------|------|------------------|
-| Chrome | Safari | Firefox | Opera | Opera Mini | Edge | Samsung Internet |
+| Feature | Supported |
+| :--- | :---: |
+| ResizeObserver ponyfill API | Yes |
+| `content-box` observations | Yes |
+| `border-box` observations | Yes |
+| `device-pixel-content-box` observations | Yes |
+| Resize loop error delivery | Yes |
+| Inline-element handling rules | Yes |
+| SVG element observation | Yes |
+| Static GitHub Pages demo in `docs/` | Yes |
 
 ---
 
-\*If other interaction occurs, changes will be detected.
+## Table of Contents
 
-\*\*IE10 requires additional polyfills for `WeakMap`, `MutationObserver` and `devicePixelRatio`. IE9 requires IE10 polyfills plus `requestAnimationFrame`. For more information, [see issue here](https://github.com/juggle/resize-observer/issues/64).
+1. [Framework Compatibility](#framework-compatibility)
+2. [Installation](#installation)
+3. [Quick Start](#quick-start)
+4. [API](#api)
+5. [Configuration](#configuration)
+6. [Run Locally](#run-locally)
+7. [Publishing](#publishing)
+8. [License](#license)
+
+---
+
+## Framework Compatibility
+
+| Package Version | Angular | React | Vue | TypeScript | Notes |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| 4.x | Any browser-based version | Any browser-based version | Any browser-based version | 4.7+ | Maintained `@revivejs` fork |
+| 3.x | Any browser-based version | Any browser-based version | Any browser-based version | 4.7 | Original upstream `@juggle` package line |
+
+This library is not Angular-specific. If your framework runs in a browser and can import npm packages, it can use this ponyfill.
+
+---
+
+## Installation
+
+```bash
+npm install @revivejs/resize-observer
+```
+
+---
+
+## Quick Start
+
+```ts
+import { ResizeObserver } from '@revivejs/resize-observer';
+
+const ro = new ResizeObserver((entries) => {
+  for (const entry of entries) {
+    const { inlineSize, blockSize } = entry.contentBoxSize[0];
+    entry.target.setAttribute(
+      'data-size',
+      `${Math.round(inlineSize)} x ${Math.round(blockSize)}`
+    );
+  }
+});
+
+ro.observe(document.body, { box: 'content-box' });
+```
+
+---
+
+## API
+
+### `new ResizeObserver(callback)`
+
+Creates an observer that receives `ResizeObserverEntry[]` and the active observer instance.
+
+### `observe(target, options?)`
+
+Starts observing an `Element`.
+
+### `unobserve(target)`
+
+Stops observing a previously registered `Element`.
+
+### `disconnect()`
+
+Stops all active observations for the observer.
+
+### Resize observer entry fields
+
+- `contentRect`
+- `contentBoxSize`
+- `borderBoxSize`
+- `devicePixelContentBoxSize`
+
+---
+
+## Configuration
+
+| Option | Type | Description | Default |
+| :--- | :--- | :--- | :--- |
+| `box` | `'content-box' \| 'border-box' \| 'device-pixel-content-box'` | Selects which box size to observe for each target. | `'content-box'` |
+
+---
+
+## Run Locally
+
+```bash
+npm install
+npm test
+npm run build
+npm start
+```
+
+---
+
+## Publishing
+
+```bash
+npm run build
+npm run pack:check
+npm publish --access public
+```
+
+---
+
+## License
+
+Apache-2.0
+
+---
+
+## Credits
+
+- Original project: Juggle
+- Maintained by: Revivejs
