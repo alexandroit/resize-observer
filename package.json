@@ -1,68 +1,87 @@
 {
-  "name": "@juggle/resize-observer",
-  "version": "3.3.1",
+  "name": "@revivejs/resize-observer",
+  "version": "4.0.0",
   "description": "Polyfills the ResizeObserver API and supports box size options from the latest spec",
   "main": "lib/exports/resize-observer.umd.js",
   "module": "lib/exports/resize-observer.js",
   "types": "lib/exports/resize-observer.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/exports/resize-observer.d.ts",
+      "import": "./lib/exports/resize-observer.js",
+      "require": "./lib/exports/resize-observer.umd.js",
+      "default": "./lib/exports/resize-observer.js"
+    }
+  },
+  "sideEffects": false,
   "files": [
     "lib/**/*.{js,ts}"
   ],
   "scripts": {
-    "build": "rm -rf lib && npm run build:esm && npm run build:umd",
+    "clean": "rm -rf lib docs/index.html docs/page.js docs/page.css",
+    "build": "npm run clean && npm run build:lib && npm run build:docs",
+    "build:lib": "npm run build:esm && npm run build:umd",
     "build:esm": "tsc",
     "build:umd": "rollup -c",
-    "build:docs": "echo 'no longer building docs for this version'",
-    "ci-tests": "npm test -- --ci --runInBand && cat coverage/lcov.info | coveralls",
+    "build:docs": "node scripts/build-docs.mjs",
+    "build:package": "npm run build",
+    "pack:check": "npm pack --dry-run",
+    "start": "npm run build:docs && serve docs -l 4173",
+    "ci": "npm test && npm run build && npm run pack:check",
     "test": "npm run lint && jest --coverage",
     "lint": "eslint '{src,test}/**/*.ts'",
-    "preVersion": "npm run build-docs",
+    "preversion": "npm run build",
     "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/juggle/resize-observer.git"
+    "url": "git+https://github.com/alexandroit/resize-observer.git"
   },
   "keywords": [
-    "ResizeObserver",
+    "resize-observer",
     "polyfill",
     "ponyfill",
-    "event",
+    "browser",
+    "dom",
     "resize",
     "observer",
     "typescript",
     "javascript",
     "element",
-    "component",
-    "container",
-    "queries",
-    "web components",
-    "front-end",
-    "html",
-    "Angular",
-    "React",
-    "Vue"
+    "element-resize",
+    "responsive",
+    "web-components",
+    "ui",
+    "angular",
+    "react",
+    "vue",
+    "maintained",
+    "revived"
   ],
-  "author": "Juggle",
+  "author": "Alexandro Paixao Marques",
+  "contributors": [
+    "Juggle (original project)"
+  ],
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/juggle/resize-observer/issues"
+    "url": "https://github.com/alexandroit/resize-observer/issues"
   },
-  "homepage": "https://juggle.studio/resize-observer/",
+  "homepage": "https://alexandroit.github.io/resize-observer/",
+  "engines": {
+    "node": ">=18"
+  },
   "devDependencies": {
     "@types/jest": "^28.1.7",
     "@typescript-eslint/eslint-plugin": "^5.33.1",
     "@typescript-eslint/parser": "^5.33.1",
-    "core-js": "^3.24.1",
-    "coveralls": "^3.1.1",
-    "cssnano": "^5.1.13",
+    "esbuild": "^0.25.11",
     "eslint": "^8.22.0",
     "jest": "^28.1.3",
-    "jest-cli": "^28.1.3",
     "jest-environment-jsdom": "^28.1.3",
     "jest-junit": "^14.0.0",
     "jsdom": "^20.0.0",
     "rollup": "^2.78.0",
+    "serve": "^14.2.5",
     "ts-jest": "^28.0.8",
     "typescript": "^4.7.4"
   }
