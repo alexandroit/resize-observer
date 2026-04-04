@@ -56,7 +56,7 @@
 
 | Package Version | Angular | React | Vue | TypeScript | Notes |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| 4.x | Any browser-based version | Any browser-based version | Any browser-based version | 4.7+ | Maintained `@revivejs` fork |
+| 4.x | Any browser-based version | Any browser-based version | Any browser-based version | 5.x+ | Maintained `@revivejs` fork |
 | 3.x | Any browser-based version | Any browser-based version | Any browser-based version | 4.7 | Original upstream `@juggle` package line |
 
 This library is not Angular-specific. If your framework runs in a browser and can import npm packages, it can use this ponyfill.
