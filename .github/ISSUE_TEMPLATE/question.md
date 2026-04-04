@@ -7,4 +7,5 @@ assignees: ''
 
 ---
 
-Please use the [discussions tab](/juggle/resize-observer/discussions/new) for submitting questions!
+Please open a discussion if GitHub Discussions are enabled for this repository.
+If not, submit the question as an issue and include enough context to reproduce the problem or usage pattern.

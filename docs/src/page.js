@@ -1,9 +1,6 @@
-import 'core-js/features/symbol';
-import 'core-js/features/array/from';
-import 'core-js/features/dom-collections/iterator';
-import { ResizeObserver } from '../../lib/ResizeObserver';
+import { ResizeObserver } from '../../src/exports/resize-observer';
 
-window.ResizeObserver = ResizeObserver; // Override global so that people can play :)
+window.ResizeObserver = ResizeObserver;
 
 const perfArea = document.getElementById('performance-example');
 const perfFragment = document.createDocumentFragment();
@@ -22,8 +19,8 @@ const ro = new ResizeObserver(entries => {
   });
 });
 
-[...document.querySelectorAll('pre, code')].forEach(el => {
-  el.innerHTML = el.innerHTML.trim();
+[...document.querySelectorAll('pre code')].forEach(el => {
+  el.textContent = el.textContent.trim();
 });
 
 const perfEls = [];
@@ -48,16 +45,16 @@ if (!('toggleAttribute' in HTMLElement.prototype)) {
 }
 
 perfArea.addEventListener('click', function () {
-  const animating = this.toggleAttribute('animate');
+  const animating = this.toggleAttribute('data-animate');
   perfEls.forEach(el => animating ? ro.observe(el) : ro.unobserve(el));
 });
 
 document.getElementById('transition-example').addEventListener('click', function () {
-  this.toggleAttribute('fill');
+  this.toggleAttribute('data-fill');
 });
 
 document.getElementById('animation-example').addEventListener('click', function () {
-  this.toggleAttribute('animate');
+  this.toggleAttribute('data-animate');
 });
 
-[...document.querySelectorAll('[resize]')].forEach(el => ro.observe(el));
+[...document.querySelectorAll('[data-resize]')].forEach(el => ro.observe(el));
