@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.4 - 2026-04-03
+
+- upgraded Rollup from 2 to 3 (UMD bundler step; 2→3 required before advancing to 4)
+- `rollup.config.js` unchanged — CJS format and simple UMD config fully compatible with Rollup 3
+- UMD output format and public API unaffected
+- no public API or output changes
+
 ## 4.0.3 - 2026-04-03
 
 - upgraded ESLint from 8 to 9 (flat config)
