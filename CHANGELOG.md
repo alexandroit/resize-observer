@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.0.5 - 2026-04-05
+
+- standardized the README to the ReviveJS release pattern
+- added versioned docs history for `4.0.0` through `4.0.5` under `docs-src/` and `docs/`
+- replaced the old single demo page with an interactive example explorer covering box options, SVG, inline targets, transitions, animations, lifecycle controls, and observed-grid performance
+- updated the docs build pipeline to generate per-version static builds and a version selector index
+- no public API or output changes
+
 ## 4.0.4 - 2026-04-03
 
 - upgraded Rollup from 2 to 3 (UMD bundler step; 2→3 required before advancing to 4)

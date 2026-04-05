@@ -1,87 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Framework-agnostic ResizeObserver ponyfill maintained by revivejs.">
-  <title>@revivejs/resize-observer</title>
-  <link rel="stylesheet" href="page.css">
+  <meta charset="utf-8">
+  <title>@revivejs/resize-observer — Docs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0; url=v4.0.5/">
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #102033;
+      --muted: #59708a;
+      --surface: rgba(255,255,255,0.9);
+      --border: rgba(191,206,223,0.8);
+      --shadow: 0 24px 60px rgba(23, 50, 77, 0.12);
+      --accent: #c15d3f;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+      font-family: "Avenir Next", "Helvetica Neue", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(254,228,179,0.5), transparent 32%),
+        radial-gradient(circle at left 18%, rgba(170,219,255,0.4), transparent 28%),
+        linear-gradient(180deg, #fff9f0 0%, #f5fbff 55%, #eef4fb 100%);
+    }
+
+    .card {
+      width: min(760px, 100%);
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      margin: 0 0 0.75rem;
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .versions {
+      display: grid;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+
+    .ver {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.9rem 1rem;
+      border-radius: 16px;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.8);
+      color: var(--text);
+    }
+
+    .ver.latest {
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--accent), #9e4a31);
+      color: #fff;
+    }
+
+    .ver span {
+      font-weight: 700;
+    }
+
+    .note {
+      margin-top: 0.75rem;
+      font-size: 0.92rem;
+    }
+  </style>
 </head>
 <body>
-  <div class="page-shell">
-    <header class="hero">
-      <p class="eyebrow">Maintained fork</p>
-      <h1>@revivejs/resize-observer</h1>
-      <p class="lede">
-        A framework-agnostic ResizeObserver ponyfill with content-box, border-box, and
-        device-pixel-content-box support.
-      </p>
-      <div class="hero-actions">
-        <a href="https://github.com/alexandroit/resize-observer">Repository</a>
-        <a href="https://github.com/alexandroit/resize-observer/issues">Issues</a>
-        <a href="https://www.npmjs.com/package/@revivejs/resize-observer">npm</a>
-      </div>
-    </header>
-
-    <main class="content-grid">
-      <section class="panel">
-        <h2>Install</h2>
-        <pre><code>npm install @revivejs/resize-observer</code></pre>
-      </section>
-
-      <section class="panel">
-        <h2>Quick start</h2>
-        <pre><code>import { ResizeObserver } from '@revivejs/resize-observer';
-
-const ro = new ResizeObserver((entries) =&gt; {
-  for (const entry of entries) {
-    const { inlineSize, blockSize } = entry.contentBoxSize[0];
-    entry.target.textContent = `${Math.round(inlineSize)} x ${Math.round(blockSize)}`;
-  }
-});
-
-ro.observe(document.querySelector('[data-resize]'));</code></pre>
-      </section>
-
-      <section class="panel panel-wide">
-        <h2>Live demo</h2>
-        <p>
-          These examples use the package bundled from the current source tree and rendered as a static
-          GitHub Pages demo.
-        </p>
-        <div class="demo-grid">
-          <article>
-            <h3>Baseline</h3>
-            <div data-resize class="demo-box"></div>
-          </article>
-          <article>
-            <h3>Pseudo classes</h3>
-            <div data-resize id="pseudo-example" class="demo-box interactive-box" tabindex="0">
-              Hover, click or focus me
-            </div>
-          </article>
-          <article>
-            <h3>Animation</h3>
-            <div data-resize id="animation-example" class="demo-box interactive-box">
-              Click to animate
-            </div>
-          </article>
-          <article>
-            <h3>Transition</h3>
-            <div data-resize id="transition-example" class="demo-box interactive-box">
-              Click to toggle
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="panel panel-wide">
-        <h2>Performance sample</h2>
-        <p>Click the grid to toggle 200 observed elements. Updates: <span id="performance-count">0</span></p>
-        <div id="performance-example" aria-label="Performance test grid"></div>
-      </section>
-    </main>
+  <div class="card">
+    <h1>@revivejs/resize-observer</h1>
+    <p>Select a published package version to view the matching docs build:</p>
+    <div class="versions">
+      <a class="ver latest" href="v4.0.5/">ResizeObserver 4.0.5 <span>(latest)</span></a>
+      <a class="ver other" href="v4.0.4/">ResizeObserver 4.0.4</a>
+      <a class="ver other" href="v4.0.3/">ResizeObserver 4.0.3</a>
+      <a class="ver other" href="v4.0.2/">ResizeObserver 4.0.2</a>
+      <a class="ver other" href="v4.0.1/">ResizeObserver 4.0.1</a>
+      <a class="ver other" href="v4.0.0/">ResizeObserver 4.0.0</a>
+    </div>
+    <p class="note">Redirecting to the latest version…</p>
   </div>
-  <script src="page.js"></script>
 </body>
 </html>
