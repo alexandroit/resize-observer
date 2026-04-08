@@ -1,29 +1,29 @@
-# @revivejs/resize-observer
+# @stackline/resize-observer
 
-> A maintained **ResizeObserver 4.0.x ponyfill** for browser applications, with support for `content-box`, `border-box`, and `device-pixel-content-box` observations, TypeScript declarations, ESM and UMD bundles, and versioned docs for every published ReviveJS release.
+> A maintained **ResizeObserver 4.0.x ponyfill** for browser applications, with support for `content-box`, `border-box`, and `device-pixel-content-box` observations, TypeScript declarations, ESM and UMD bundles, and versioned docs for every published Stackline release.
 
-[![npm version](https://img.shields.io/npm/v/%40revivejs%2Fresize-observer.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/resize-observer)
-[![npm downloads](https://img.shields.io/npm/dt/%40revivejs%2Fresize-observer.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/resize-observer)
-[![npm monthly](https://img.shields.io/npm/dm/%40revivejs%2Fresize-observer.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/resize-observer)
-[![license](https://img.shields.io/npm/l/%40revivejs%2Fresize-observer.svg?style=flat-square)](https://github.com/alexandroit/resize-observer/blob/HEAD/LICENSE)
+[![npm version](https://img.shields.io/npm/v/%40stackline%2Fresize-observer.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/resize-observer)
+[![npm downloads](https://img.shields.io/npm/dt/%40stackline%2Fresize-observer.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/resize-observer)
+[![npm monthly](https://img.shields.io/npm/dm/%40stackline%2Fresize-observer.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/resize-observer)
+[![license](https://img.shields.io/npm/l/%40stackline%2Fresize-observer.svg?style=flat-square)](https://github.com/alexandroit/resize-observer/blob/HEAD/LICENSE)
 [![JavaScript ES2018+](https://img.shields.io/badge/JavaScript-ES2018%2B-f7df1e?style=flat-square&logo=javascript&logoColor=111)](https://developer.mozilla.org/docs/Web/JavaScript)
 [![TypeScript typings](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![GitHub stars](https://img.shields.io/github/stars/alexandroit/resize-observer.svg?style=flat-square)](https://github.com/alexandroit/resize-observer/stargazers)
 
-**[Documentation & Live Demos](https://alexandroit.github.io/resize-observer/)** | **[npm](https://www.npmjs.com/package/@revivejs/resize-observer)** | **[Issues](https://github.com/alexandroit/resize-observer/issues)** | **[Repository](https://github.com/alexandroit/resize-observer)**
+**[Documentation & Live Demos](https://alexandroit.github.io/resize-observer/)** | **[npm](https://www.npmjs.com/package/@stackline/resize-observer)** | **[Issues](https://github.com/alexandroit/resize-observer/issues)** | **[Repository](https://github.com/alexandroit/resize-observer)**
 
 **Latest version:** `4.0.5`
 
 ---
 
 > **Credits:** Original project by Juggle.  
-> Maintained and republished by Alexandroit under the ReviveJS scope.
+> Maintained and republished by Alexandroit under the Stackline scope.
 
 ---
 
 ## Why this library?
 
-`@revivejs/resize-observer` keeps the proven ResizeObserver ponyfill API available under active
+`@stackline/resize-observer` keeps the proven ResizeObserver ponyfill API available under active
 package ownership for teams that still need a browser-safe observer implementation with box-size
 support. The package stays intentionally close to the maintained 4.0.x line while cleaning up
 metadata, documentation, and GitHub Pages delivery.
@@ -72,7 +72,7 @@ Earlier `3.x` releases were published from the original upstream package line at
 ## Installation
 
 ```bash
-npm install @revivejs/resize-observer
+npm install @stackline/resize-observer
 ```
 
 ---
@@ -80,7 +80,7 @@ npm install @revivejs/resize-observer
 ## Setup
 
 ```ts
-import { ResizeObserver } from '@revivejs/resize-observer';
+import { ResizeObserver } from '@stackline/resize-observer';
 
 const observer = new ResizeObserver((entries) => {
   for (const entry of entries) {
@@ -94,7 +94,7 @@ const observer = new ResizeObserver((entries) => {
 ## Basic Usage
 
 ```ts
-import { ResizeObserver } from '@revivejs/resize-observer';
+import { ResizeObserver } from '@stackline/resize-observer';
 
 const target = document.querySelector('[data-resize-target]');
 

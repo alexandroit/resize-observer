@@ -23,7 +23,7 @@ const demoGroups = [
         title: 'Basic observe',
         summary: 'Observe one resizable HTML element and inspect the classic entry fields immediately.',
         controls: ['width', 'height', 'padding'],
-        code: () => `import { ResizeObserver } from '@revivejs/resize-observer';
+        code: () => `import { ResizeObserver } from '@stackline/resize-observer';
 
 const ro = new ResizeObserver((entries) => {
   for (const entry of entries) {
@@ -65,7 +65,7 @@ ro.observe(document.querySelector('[data-resize-target]'));`,
         title: 'content-box / border-box / device-pixel-content-box',
         summary: 'Switch observation boxes on the same element and compare what the entry exposes.',
         controls: ['width', 'height', 'padding', 'border', 'boxOption'],
-        code: () => `import { ResizeObserver } from '@revivejs/resize-observer';
+        code: () => `import { ResizeObserver } from '@stackline/resize-observer';
 
 const ro = new ResizeObserver((entries) => {
   const entry = entries[0];

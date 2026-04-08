@@ -3,6 +3,6 @@ window.__REVIVE_RESIZE_DOCS_META__ = {
   docsPath: 'v4.0.2',
   runtimeTarget: 'Modern browsers with ES2018 demo bundle',
   repoUrl: 'https://github.com/alexandroit/resize-observer',
-  npmUrl: 'https://www.npmjs.com/package/@revivejs/resize-observer',
+  npmUrl: 'https://www.npmjs.com/package/@stackline/resize-observer',
   readmeUrl: 'https://github.com/alexandroit/resize-observer#readme'
 };

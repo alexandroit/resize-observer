@@ -1,5 +1,5 @@
 {
-  "name": "@revivejs/resize-observer",
+  "name": "@stackline/resize-observer",
   "version": "4.0.5",
   "description": "Polyfills the ResizeObserver API and supports box size options from the latest spec",
   "main": "lib/exports/resize-observer.umd.js",

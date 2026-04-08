@@ -95,7 +95,7 @@ function renderVersionIndex(versionList, latestVersion) {
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>@revivejs/resize-observer — Docs</title>
+  <title>@stackline/resize-observer — Docs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="refresh" content="0; url=${latestHref}">
   <style>
@@ -182,7 +182,7 @@ function renderVersionIndex(versionList, latestVersion) {
 </head>
 <body>
   <div class="card">
-    <h1>@revivejs/resize-observer</h1>
+    <h1>@stackline/resize-observer</h1>
     <p>Select a published package version to view the matching docs build:</p>
     <div class="versions">
 ${versionCards}

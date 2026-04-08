@@ -36,11 +36,11 @@
 
 ## 4.0.1 - 2026-04-03
 
-- renamed npm package scope to `@revivejs/resize-observer`
+- renamed npm package scope to `@stackline/resize-observer`
 
 ## 4.0.0 - 2026-04-03
 
-- republished the package for the maintained `@revivejs/resize-observer` scope
+- republished the package for the maintained `@stackline/resize-observer` scope
 - restored a local `docs/` build flow for GitHub Pages
 - removed legacy analytics and stale upstream-only repository metadata
 - added a GitHub Actions CI workflow for build, test, and package verification
