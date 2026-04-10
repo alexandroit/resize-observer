@@ -1,4 +1,4 @@
-window.__REVIVE_RESIZE_DOCS_META__ = {
+window.__STACKLINE_RESIZE_DOCS_META__ = {
   packageVersion: '4.0.2',
   docsPath: 'v4.0.2',
   runtimeTarget: 'Modern browsers with ES2018 demo bundle',

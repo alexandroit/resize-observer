@@ -1,6 +1,6 @@
 import { ResizeObserver } from '../../src/exports/resize-observer';
 
-const meta = window.__REVIVE_RESIZE_DOCS_META__;
+const meta = window.__STACKLINE_RESIZE_DOCS_META__;
 
 const state = {
   selectedDemoId: 'basic-observe',
