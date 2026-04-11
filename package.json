@@ -75,7 +75,7 @@
   "bugs": {
     "url": "https://github.com/alexandroit/resize-observer/issues"
   },
-  "homepage": "https://alexandroit.github.io/resize-observer/",
+  "homepage": "https://alexandro.net/docs/vanilla/resize-observer/",
   "engines": {
     "node": ">=18"
   },

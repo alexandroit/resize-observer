@@ -10,7 +10,7 @@
 [![TypeScript typings](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![GitHub stars](https://img.shields.io/github/stars/alexandroit/resize-observer.svg?style=flat-square)](https://github.com/alexandroit/resize-observer/stargazers)
 
-**[Documentation & Live Demos](https://alexandroit.github.io/resize-observer/)** | **[npm](https://www.npmjs.com/package/@stackline/resize-observer)** | **[GitHub Download](https://github.com/alexandroit/resize-observer/tree/v3/downloads)** | **[Issues](https://github.com/alexandroit/resize-observer/issues)** | **[Repository](https://github.com/alexandroit/resize-observer)**  
+**[Documentation & Live Demos](https://alexandro.net/docs/vanilla/resize-observer/)** | **[npm](https://www.npmjs.com/package/@stackline/resize-observer)** | **[GitHub Download](https://github.com/alexandroit/resize-observer/tree/v3/downloads)** | **[Issues](https://github.com/alexandroit/resize-observer/issues)** | **[Repository](https://github.com/alexandroit/resize-observer)**  
 
 **Latest version:** `4.0.5`
 
@@ -59,12 +59,12 @@ metadata, documentation, and GitHub Pages delivery.
 
 | Package version | Maintained line | Runtime target | TypeScript declarations | Demo link |
 | :---: | :---: | :--- | :--- | :--- |
-| **4.0.5** | **ResizeObserver 4.0.x** | **Modern browsers with ES2018 demo bundle** | **`lib/exports/resize-observer.d.ts`** | [ResizeObserver 4.0.5 docs](https://alexandroit.github.io/resize-observer/v4.0.5/) |
-| **4.0.4** | **ResizeObserver 4.0.x** | **Modern browsers with ES2018 demo bundle** | **`lib/exports/resize-observer.d.ts`** | [ResizeObserver 4.0.4 docs](https://alexandroit.github.io/resize-observer/v4.0.4/) |
-| 4.0.3 | ResizeObserver 4.0.x | Modern browsers with ES2018 demo bundle | `lib/exports/resize-observer.d.ts` | [ResizeObserver 4.0.3 docs](https://alexandroit.github.io/resize-observer/v4.0.3/) |
-| 4.0.2 | ResizeObserver 4.0.x | Modern browsers with ES2018 demo bundle | `lib/exports/resize-observer.d.ts` | [ResizeObserver 4.0.2 docs](https://alexandroit.github.io/resize-observer/v4.0.2/) |
-| 4.0.1 | ResizeObserver 4.0.x | Modern browsers with ES2018 demo bundle | `lib/exports/resize-observer.d.ts` | [ResizeObserver 4.0.1 docs](https://alexandroit.github.io/resize-observer/v4.0.1/) |
-| 4.0.0 | ResizeObserver 4.0.x | Modern browsers with ES2018 demo bundle | `lib/exports/resize-observer.d.ts` | [ResizeObserver 4.0.0 docs](https://alexandroit.github.io/resize-observer/v4.0.0/) |
+| **4.0.5** | **ResizeObserver 4.0.x** | **Modern browsers with ES2018 demo bundle** | **`lib/exports/resize-observer.d.ts`** | [ResizeObserver 4.0.5 docs](https://alexandro.net/docs/vanilla/resize-observer/v4.0.5/) |
+| **4.0.4** | **ResizeObserver 4.0.x** | **Modern browsers with ES2018 demo bundle** | **`lib/exports/resize-observer.d.ts`** | [ResizeObserver 4.0.4 docs](https://alexandro.net/docs/vanilla/resize-observer/v4.0.4/) |
+| 4.0.3 | ResizeObserver 4.0.x | Modern browsers with ES2018 demo bundle | `lib/exports/resize-observer.d.ts` | [ResizeObserver 4.0.3 docs](https://alexandro.net/docs/vanilla/resize-observer/v4.0.3/) |
+| 4.0.2 | ResizeObserver 4.0.x | Modern browsers with ES2018 demo bundle | `lib/exports/resize-observer.d.ts` | [ResizeObserver 4.0.2 docs](https://alexandro.net/docs/vanilla/resize-observer/v4.0.2/) |
+| 4.0.1 | ResizeObserver 4.0.x | Modern browsers with ES2018 demo bundle | `lib/exports/resize-observer.d.ts` | [ResizeObserver 4.0.1 docs](https://alexandro.net/docs/vanilla/resize-observer/v4.0.1/) |
+| 4.0.0 | ResizeObserver 4.0.x | Modern browsers with ES2018 demo bundle | `lib/exports/resize-observer.d.ts` | [ResizeObserver 4.0.0 docs](https://alexandro.net/docs/vanilla/resize-observer/v4.0.0/) |
 
 Earlier `3.x` releases were published from the original upstream package line at `@juggle/resize-observer`.
 
