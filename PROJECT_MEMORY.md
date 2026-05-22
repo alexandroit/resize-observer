@@ -19,6 +19,7 @@ Last updated: 2026-05-22
 - Rebuilt generated library output and the direct download bundle.
 - Published `@stackline/resize-observer@1.0.0` to public npm.
 - Published `@stackline/resize-observer@1.0.0` to the local Verdaccio registry.
+- Removed the old local Verdaccio version `@stackline/resize-observer@4.0.5` so the local registry only lists `1.0.0`.
 - Published static docs to the production docs root on `codex-server`:
   - source staging: `/storage/data/build/alexandro.net-docs`
   - production target: `/var/www/html/alexandro.net_docs`
