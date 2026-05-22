@@ -1,6 +1,6 @@
 # @stackline/resize-observer
 
-> A maintained **ResizeObserver 4.0.x ponyfill** for browser applications, with support for `content-box`, `border-box`, and `device-pixel-content-box` observations, TypeScript declarations, ESM and UMD bundles, and versioned docs for every published Stackline release.
+> A maintained **ResizeObserver ponyfill** for browser applications, with support for `content-box`, `border-box`, and `device-pixel-content-box` observations, TypeScript declarations, ESM and UMD bundles, and versioned docs for every published Stackline release.
 
 [![npm version](https://img.shields.io/npm/v/%40stackline%2Fresize-observer.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/resize-observer)
 [![npm downloads](https://img.shields.io/npm/dt/%40stackline%2Fresize-observer.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/resize-observer)
@@ -12,7 +12,7 @@
 
 **[Documentation & Live Demos](https://alexandro.net/docs/vanilla/resize-observer/)** | **[npm](https://www.npmjs.com/package/@stackline/resize-observer)** | **[GitHub Download](https://github.com/alexandroit/resize-observer/tree/v3/downloads)** | **[Issues](https://github.com/alexandroit/resize-observer/issues)** | **[Repository](https://github.com/alexandroit/resize-observer)**  
 
-**Latest version:** `4.0.5`
+**Latest version:** `1.0.0`
 
 ---
 
@@ -25,14 +25,14 @@
 
 `@stackline/resize-observer` keeps the proven ResizeObserver ponyfill API available under active
 package ownership for teams that still need a browser-safe observer implementation with box-size
-support. The package stays intentionally close to the maintained 4.0.x line while cleaning up
-metadata, documentation, and GitHub Pages delivery.
+support. The package keeps the proven ponyfill API while cleaning up metadata, documentation, and
+GitHub Pages delivery.
 
 ## Features
 
 | Feature | Supported |
 | :--- | :---: |
-| Maintained ResizeObserver 4.0.x ponyfill line | ✅ |
+| Stackline 1.0.0 ponyfill baseline | ✅ |
 | `content-box`, `border-box`, and `device-pixel-content-box` | ✅ |
 | Classic `contentRect` plus box-size arrays | ✅ |
 | HTML, inline, and SVG targets | ✅ |
@@ -59,12 +59,7 @@ metadata, documentation, and GitHub Pages delivery.
 
 | Package version | Maintained line | Runtime target | TypeScript declarations | Demo link |
 | :---: | :---: | :--- | :--- | :--- |
-| **4.0.5** | **ResizeObserver 4.0.x** | **Modern browsers with ES2018 demo bundle** | **`lib/exports/resize-observer.d.ts`** | [ResizeObserver 4.0.5 docs](https://alexandro.net/docs/vanilla/resize-observer/v4.0.5/) |
-| **4.0.4** | **ResizeObserver 4.0.x** | **Modern browsers with ES2018 demo bundle** | **`lib/exports/resize-observer.d.ts`** | [ResizeObserver 4.0.4 docs](https://alexandro.net/docs/vanilla/resize-observer/v4.0.4/) |
-| 4.0.3 | ResizeObserver 4.0.x | Modern browsers with ES2018 demo bundle | `lib/exports/resize-observer.d.ts` | [ResizeObserver 4.0.3 docs](https://alexandro.net/docs/vanilla/resize-observer/v4.0.3/) |
-| 4.0.2 | ResizeObserver 4.0.x | Modern browsers with ES2018 demo bundle | `lib/exports/resize-observer.d.ts` | [ResizeObserver 4.0.2 docs](https://alexandro.net/docs/vanilla/resize-observer/v4.0.2/) |
-| 4.0.1 | ResizeObserver 4.0.x | Modern browsers with ES2018 demo bundle | `lib/exports/resize-observer.d.ts` | [ResizeObserver 4.0.1 docs](https://alexandro.net/docs/vanilla/resize-observer/v4.0.1/) |
-| 4.0.0 | ResizeObserver 4.0.x | Modern browsers with ES2018 demo bundle | `lib/exports/resize-observer.d.ts` | [ResizeObserver 4.0.0 docs](https://alexandro.net/docs/vanilla/resize-observer/v4.0.0/) |
+| **1.0.0** | **ResizeObserver ponyfill baseline** | **Modern browsers with ES2018 demo bundle** | **`lib/exports/resize-observer.d.ts`** | [ResizeObserver 1.0.0 docs](https://alexandro.net/docs/vanilla/resize-observer/v1.0.0/) |
 
 Earlier `3.x` releases were published from the original upstream package line at `@juggle/resize-observer`.
 
@@ -182,7 +177,7 @@ The published package keeps the maintained distribution layout:
 npm install
 npm test
 npm run build
-npm run build:docs:all
+npm run build:docs
 npm start
 ```
 

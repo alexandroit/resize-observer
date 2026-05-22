@@ -1,4 +1,4 @@
-@stackline/resize-observer 4.0.5
+@stackline/resize-observer 1.0.0
 
 Browser bundle download
 =======================

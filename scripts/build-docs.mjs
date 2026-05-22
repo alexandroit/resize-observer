@@ -1,11 +1,13 @@
 import { build } from 'esbuild';
-import { copyFileSync, existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
 const docsSrcDir = path.join(root, 'docs-src');
 const docsDir = path.join(root, 'docs');
-const requestedTarget = process.argv[2] || '--all';
+const packageJson = JSON.parse(readFileSync(path.join(root, 'package.json'), 'utf8'));
+const packageVersionDir = `v${packageJson.version}`;
+const requestedTarget = process.argv[2] || 'v1.0.0';
 const buildAll = requestedTarget === '--all';
 
 const versionDirs = readdirSync(docsSrcDir, { withFileTypes: true })
@@ -17,16 +19,18 @@ if (!versionDirs.length) {
   throw new Error('No versioned docs sources were found in docs-src/.');
 }
 
-const latestVersionDir = versionDirs[versionDirs.length - 1];
 const selectedVersionDirs = buildAll ? versionDirs : versionDirs.filter((dir) => dir === requestedTarget);
 
 if (!selectedVersionDirs.length) {
   throw new Error(`Unknown docs target "${requestedTarget}". Available targets: ${versionDirs.join(', ')}`);
 }
 
-if (buildAll) {
-  rmSync(docsDir, { force: true, recursive: true });
-}
+rmSync(docsDir, { force: true, recursive: true });
+
+const displayedVersionDirs = buildAll ? versionDirs : selectedVersionDirs;
+const latestVersionDir = displayedVersionDirs.includes(packageVersionDir)
+  ? packageVersionDir
+  : displayedVersionDirs[displayedVersionDirs.length - 1];
 
 mkdirSync(docsDir, { recursive: true });
 writeFileSync(path.join(docsDir, '.nojekyll'), '', 'utf8');
@@ -53,7 +57,7 @@ for (const versionDir of selectedVersionDirs) {
   copyRequiredFile(sourceDir, destinationDir, 'docs-meta.js');
 }
 
-writeFileSync(path.join(docsDir, 'index.html'), renderVersionIndex(versionDirs, latestVersionDir), 'utf8');
+writeFileSync(path.join(docsDir, 'index.html'), renderVersionIndex(displayedVersionDirs, latestVersionDir), 'utf8');
 
 function copyRequiredFile(sourceDir, destinationDir, fileName) {
   const source = path.join(sourceDir, fileName);
@@ -82,8 +86,11 @@ function compareVersionDirs(left, right) {
 function renderVersionIndex(versionList, latestVersion) {
   const latestHref = `${latestVersion}/`;
   const downloadUrl = 'https://github.com/alexandroit/resize-observer/tree/v3/downloads';
-  const versionCards = [...versionList]
-    .reverse()
+  const orderedVersionList = [
+    latestVersion,
+    ...[...versionList].filter((versionDir) => versionDir !== latestVersion).reverse()
+  ];
+  const versionCards = orderedVersionList
     .map((versionDir) => {
       const versionNumber = versionDir.slice(1);
       const latestClass = versionDir === latestVersion ? 'ver latest' : 'ver other';

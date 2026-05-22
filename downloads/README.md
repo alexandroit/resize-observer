@@ -4,7 +4,7 @@ This directory contains browser-ready downloads for developers who want to use `
 
 Current version:
 
-- [stackline-resize-observer-4.0.5.zip](./stackline-resize-observer-4.0.5.zip)
+- [stackline-resize-observer-1.0.0.zip](./stackline-resize-observer-1.0.0.zip)
 
 Inside the archive:
 
