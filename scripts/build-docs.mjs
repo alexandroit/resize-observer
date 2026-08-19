@@ -7,7 +7,7 @@ const docsSrcDir = path.join(root, 'docs-src');
 const docsDir = path.join(root, 'docs');
 const packageJson = JSON.parse(readFileSync(path.join(root, 'package.json'), 'utf8'));
 const packageVersionDir = `v${packageJson.version}`;
-const requestedTarget = process.argv[2] || 'v1.0.0';
+const requestedTarget = process.argv[2] || packageVersionDir;
 const buildAll = requestedTarget === '--all';
 
 const versionDirs = readdirSync(docsSrcDir, { withFileTypes: true })
@@ -55,9 +55,13 @@ for (const versionDir of selectedVersionDirs) {
   copyRequiredFile(sourceDir, destinationDir, 'index.html');
   copyRequiredFile(sourceDir, destinationDir, 'page.css');
   copyRequiredFile(sourceDir, destinationDir, 'docs-meta.js');
+  copyOptionalFile(sourceDir, destinationDir, 'llms.txt');
+  copyOptionalFile(sourceDir, destinationDir, 'llms-full.txt');
 }
 
 writeFileSync(path.join(docsDir, 'index.html'), renderVersionIndex(displayedVersionDirs, latestVersionDir), 'utf8');
+copyRequiredFile(path.join(docsDir, latestVersionDir), docsDir, 'llms.txt');
+copyRequiredFile(path.join(docsDir, latestVersionDir), docsDir, 'llms-full.txt');
 
 function copyRequiredFile(sourceDir, destinationDir, fileName) {
   const source = path.join(sourceDir, fileName);
@@ -66,6 +70,13 @@ function copyRequiredFile(sourceDir, destinationDir, fileName) {
   }
 
   copyFileSync(source, path.join(destinationDir, fileName));
+}
+
+function copyOptionalFile(sourceDir, destinationDir, fileName) {
+  const source = path.join(sourceDir, fileName);
+  if (existsSync(source)) {
+    copyFileSync(source, path.join(destinationDir, fileName));
+  }
 }
 
 function compareVersionDirs(left, right) {

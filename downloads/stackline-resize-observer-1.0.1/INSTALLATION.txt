@@ -1,0 +1,29 @@
+@stackline/resize-observer 1.0.1
+
+Browser bundle download
+=======================
+
+This folder is for browser applications that do not install packages from npm.
+
+Files
+-----
+- resize-observer.browser.js
+- LICENSE
+- README.md
+
+Script tag usage
+----------------
+<script src="./resize-observer.browser.js"></script>
+<script>
+  const observer = new ResizeObserver((entries) => {
+    for (const entry of entries) {
+      console.log(entry.contentRect.width, entry.contentRect.height);
+    }
+  });
+
+  observer.observe(document.querySelector("[data-resize-target]"));
+</script>
+
+Global name
+-----------
+window.ResizeObserver

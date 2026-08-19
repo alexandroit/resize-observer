@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.0.1 - 2026-08-19
+
+- preserved the upstream Juggle v3 observer algorithm and the three existing named exports
+- added a bundled `.mjs` entry point so native Node ESM imports resolve correctly
+- retained the existing UMD/CommonJS entry point and added a dedicated browser-global bundle for direct script usage
+- split ESM and CommonJS declaration routing and added a TypeScript 3.9 consumer regression test
+- refreshed Jest, Rollup, ESLint, esbuild, and related build dependencies
+- made versioned docs, AI-readable docs, direct downloads, and CI release artifacts reproducible
+- added package entry-point smoke tests for ESM, CommonJS, and browser globals
+
+## 1.0.0 - 2026-05-22
+
+- established the stable Stackline 1.x package line
+- preserved the Juggle ResizeObserver v3 runtime and public API
+- published package documentation and a browser download bundle under the Stackline namespace
+
+## Legacy Stackline version history
+
+The entries below describe the earlier Stackline version sequence that preceded the stable `1.x` line.
+
 ## 4.0.5 - 2026-04-05
 
 - standardized the README to the Stackline release pattern

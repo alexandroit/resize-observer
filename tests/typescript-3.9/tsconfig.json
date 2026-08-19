@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "lib": ["DOM", "ES2018"],
+    "types": [],
+    "strict": true,
+    "skipLibCheck": false,
+    "noEmit": true
+  },
+  "files": ["consumer.ts"]
+}

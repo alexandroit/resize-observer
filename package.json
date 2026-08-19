@@ -1,40 +1,54 @@
 {
   "name": "@stackline/resize-observer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Polyfills the ResizeObserver API and supports box size options from the latest spec",
+  "type": "commonjs",
   "main": "lib/exports/resize-observer.umd.js",
-  "module": "lib/exports/resize-observer.js",
+  "module": "lib/exports/resize-observer.mjs",
   "types": "lib/exports/resize-observer.d.ts",
+  "unpkg": "lib/exports/resize-observer.browser.js",
+  "jsdelivr": "lib/exports/resize-observer.browser.js",
   "exports": {
     ".": {
-      "types": "./lib/exports/resize-observer.d.ts",
-      "import": "./lib/exports/resize-observer.js",
-      "require": "./lib/exports/resize-observer.umd.js",
-      "default": "./lib/exports/resize-observer.js"
-    }
+      "import": {
+        "types": "./lib/exports/resize-observer.d.mts",
+        "default": "./lib/exports/resize-observer.mjs"
+      },
+      "require": {
+        "types": "./lib/exports/resize-observer.d.cts",
+        "default": "./lib/exports/resize-observer.umd.js"
+      }
+    },
+    "./package.json": "./package.json"
   },
   "sideEffects": false,
   "files": [
-    "lib/**/*.{js,ts}"
+    "lib",
+    "CHANGELOG.md"
   ],
   "scripts": {
-    "clean": "rm -rf lib docs/v* docs/index.html docs/page.js docs/page.css docs/.nojekyll",
+    "clean": "rm -rf lib docs",
     "build": "npm run clean && npm run build:lib && npm run build:docs",
-    "build:lib": "npm run build:esm && npm run build:umd",
-    "build:esm": "tsc",
-    "build:umd": "rollup -c",
-    "build:docs": "node scripts/build-docs.mjs v1.0.0",
+    "build:lib": "npm run build:esm && npm run build:bundles && npm run build:types",
+    "build:esm": "node node_modules/typescript/bin/tsc",
+    "build:bundles": "rollup -c",
+    "build:types": "node scripts/normalize-declarations.mjs",
+    "build:docs": "node scripts/build-docs.mjs --all",
     "build:docs:v1.0.0": "node scripts/build-docs.mjs v1.0.0",
+    "build:docs:v1.0.1": "node scripts/build-docs.mjs v1.0.1",
     "build:download": "node scripts/build-download.mjs",
     "build:package": "npm run build",
     "docs:build": "npm run build:docs",
-    "pack:check": "npm pack --dry-run",
+    "pack:check": "node scripts/pack-check.mjs",
     "start": "npm run build:docs && serve docs -l 4173",
-    "ci": "npm test && npm run build && npm run pack:check",
+    "check": "npm test && npm run build && npm run test:types:legacy && npm run test:package && npm run build:download && npm run pack:check",
+    "ci": "npm run check",
     "test": "npm run lint && jest --coverage",
+    "test:package": "node scripts/test-package.mjs",
+    "test:types:legacy": "node node_modules/typescript-3-9/lib/tsc.js --project tests/typescript-3.9/tsconfig.json",
     "lint": "eslint '{src,test}/**/*.ts'",
-    "preversion": "npm run build",
-    "prepublishOnly": "npm run build"
+    "preversion": "npm run check",
+    "prepublishOnly": "npm run check"
   },
   "repository": {
     "type": "git",
@@ -58,7 +72,6 @@
     "angular",
     "react",
     "vue",
-    "maintained",
     "maintained"
   ],
   "author": "Alexandro Paixao Marques",
@@ -74,17 +87,17 @@
     "node": ">=18"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.14",
-    "esbuild": "^0.25.11",
-    "eslint": "^9.39.4",
-    "typescript-eslint": "^8.58.0",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
-    "jest-junit": "^14.0.0",
-    "jsdom": "^20.0.0",
-    "rollup": "^3.30.0",
+    "@types/jest": "^30.0.0",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.8.1",
+    "typescript-eslint": "^8.67.0",
+    "jest": "^30.4.2",
+    "jest-environment-jsdom": "^30.4.1",
+    "jest-junit": "^17.0.0",
+    "rollup": "^4.62.4",
     "serve": "^14.2.5",
-    "ts-jest": "^29.4.9",
-    "typescript": "^5.9.3"
+    "ts-jest": "^29.4.12",
+    "typescript": "^5.9.3",
+    "typescript-3-9": "npm:typescript@3.9.10"
   }
 }

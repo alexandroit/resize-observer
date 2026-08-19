@@ -43,15 +43,37 @@ Global name
 window.ResizeObserver
 `;
 
+await fs.mkdir(downloadRootDir, { recursive: true });
+await fs.rm(bundleDir, { recursive: true, force: true });
+await fs.rm(zipPath, { force: true });
+await fs.mkdir(bundleDir, { recursive: true });
+
+await fs.copyFile(path.join(rootDir, "README.md"), path.join(bundleDir, "README.md"));
+await fs.copyFile(path.join(rootDir, "LICENSE"), path.join(bundleDir, "LICENSE"));
+await fs.copyFile(
+  path.join(rootDir, "lib", "exports", "resize-observer.browser.js"),
+  path.join(bundleDir, "resize-observer.browser.js")
+);
+await fs.writeFile(path.join(bundleDir, "INSTALLATION.txt"), installGuide, "utf8");
+await execFileAsync("zip", ["-rq", zipPath, bundleDirName], {
+  cwd: downloadRootDir
+});
+
+const archiveNames = (await fs.readdir(downloadRootDir))
+  .filter((fileName) => /^stackline-resize-observer-\d+\.\d+\.\d+\.zip$/.test(fileName))
+  .sort((left, right) => right.localeCompare(left, "en", { numeric: true }));
+const archiveLinks = archiveNames
+  .map((fileName) => `- [${fileName}](./${fileName})${fileName === `${bundleDirName}.zip` ? " (current)" : ""}`)
+  .join("\n");
 const downloadReadme = `# GitHub Downloads
 
 This directory contains browser-ready downloads for developers who want to use \`@stackline/resize-observer\` with plain JavaScript.
 
-Current version:
+Available versions:
 
-- [${bundleDirName}.zip](./${bundleDirName}.zip)
+${archiveLinks}
 
-Inside the archive:
+Each archive contains:
 
 - \`resize-observer.browser.js\`
 - \`README.md\`
@@ -59,20 +81,6 @@ Inside the archive:
 - \`INSTALLATION.txt\`
 `;
 
-await fs.rm(downloadRootDir, { recursive: true, force: true });
-await fs.mkdir(bundleDir, { recursive: true });
-
-await fs.copyFile(path.join(rootDir, "README.md"), path.join(bundleDir, "README.md"));
-await fs.copyFile(path.join(rootDir, "LICENSE"), path.join(bundleDir, "LICENSE"));
-await fs.copyFile(
-  path.join(rootDir, "lib", "exports", "resize-observer.umd.js"),
-  path.join(bundleDir, "resize-observer.browser.js")
-);
-await fs.writeFile(path.join(bundleDir, "INSTALLATION.txt"), installGuide, "utf8");
 await fs.writeFile(path.join(downloadRootDir, "README.md"), downloadReadme, "utf8");
-
-await execFileAsync("zip", ["-rq", zipPath, bundleDirName], {
-  cwd: downloadRootDir
-});
 
 console.log(`Built GitHub download bundle into ${path.relative(rootDir, downloadRootDir)}/`);
