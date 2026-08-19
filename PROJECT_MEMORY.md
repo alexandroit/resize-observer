@@ -31,8 +31,8 @@ Last updated: 2026-08-19
 
 - Release tag commit: `0f4d4528b0405eaf4172dde450e18a8209e8fced`
 - Package-content commit: `dd0d1e2381105fceff9f92d915cb6046a8d9562f`
-- Final GitHub Actions CI run: `32314140981` (success)
-- Final GitHub Pages workflow run: `32314140987` (success)
+- Release-tag GitHub Actions CI run: `32314140981` (success)
+- Release-tag GitHub Pages workflow run: `32314140987` (success)
 - Artifact directory: `/storage/data/releases/stackline-resize-observer/1.0.1-ci-32314140981`
 - Tarball: `stackline-resize-observer-1.0.1.tgz` (21,814 bytes, 61 files)
 - SHA-512: `3aed22fcfdd9087e46d1d446fb4daa77cd0bacb2db7223fc231a300bdace64eb4740e5d31c3f65fac414935e76d8832e94a79a3e71d049ca59148af480cd77ec`
