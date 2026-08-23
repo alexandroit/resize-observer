@@ -431,48 +431,80 @@ function renderNavigation() {
 
 function renderControls() {
   const demo = getSelectedDemo();
-  elements.controls.innerHTML = demo.controls
-    .map((key) => {
-      if (key === 'boxOption') {
-        return `<div class="field"><label for="control-boxOption">Observed box</label><select id="control-boxOption" data-control="boxOption"><option value="content-box"${state.boxOption === 'content-box' ? ' selected' : ''}>content-box</option><option value="border-box"${state.boxOption === 'border-box' ? ' selected' : ''}>border-box</option><option value="device-pixel-content-box"${state.boxOption === 'device-pixel-content-box' ? ' selected' : ''}>device-pixel-content-box</option></select></div>`;
+  const labels = {
+    width: 'Width',
+    height: 'Height',
+    padding: 'Padding',
+    border: 'Border width',
+    textScale: 'Text scale',
+    perfCount: 'Observed elements'
+  };
+  const steps = {
+    width: 10,
+    height: 10,
+    padding: 2,
+    border: 1,
+    textScale: 0.05,
+    perfCount: 10
+  };
+  const mins = {
+    width: 120,
+    height: 100,
+    padding: 0,
+    border: 0,
+    textScale: 0.75,
+    perfCount: 40
+  };
+  const maxs = {
+    width: 420,
+    height: 260,
+    padding: 48,
+    border: 24,
+    textScale: 2,
+    perfCount: 240
+  };
+
+  elements.controls.textContent = '';
+  demo.controls.forEach((key) => {
+    const field = document.createElement('div');
+    const controlId = `control-${key}`;
+    const label = document.createElement('label');
+    let control;
+
+    field.className = 'field';
+    label.htmlFor = controlId;
+
+    if (key === 'boxOption') {
+      label.textContent = 'Observed box';
+      control = document.createElement('select');
+      for (const value of ['content-box', 'border-box', 'device-pixel-content-box']) {
+        const option = document.createElement('option');
+        option.value = value;
+        option.textContent = value;
+        option.selected = state.boxOption === value;
+        control.appendChild(option);
       }
+    } else {
+      control = document.createElement('input');
+      control.type = 'range';
+      control.min = String(mins[key]);
+      control.max = String(maxs[key]);
+      control.step = String(steps[key]);
+      control.value = String(state[key]);
+      label.textContent = labels[key];
 
-      const labels = {
-        width: 'Width',
-        height: 'Height',
-        padding: 'Padding',
-        border: 'Border width',
-        textScale: 'Text scale',
-        perfCount: 'Observed elements'
-      };
-      const steps = {
-        width: 10,
-        height: 10,
-        padding: 2,
-        border: 1,
-        textScale: 0.05,
-        perfCount: 10
-      };
-      const mins = {
-        width: 120,
-        height: 100,
-        padding: 0,
-        border: 0,
-        textScale: 0.75,
-        perfCount: 40
-      };
-      const maxs = {
-        width: 420,
-        height: 260,
-        padding: 48,
-        border: 24,
-        textScale: 2,
-        perfCount: 240
-      };
+      const currentValue = document.createElement('span');
+      currentValue.textContent = String(state[key]);
+      field.append(label, control, currentValue);
+    }
 
-      return `<div class="field"><label for="control-${key}">${labels[key]}</label><input id="control-${key}" data-control="${key}" type="range" min="${mins[key]}" max="${maxs[key]}" step="${steps[key]}" value="${state[key]}"><span>${state[key]}</span></div>`;
-    })
-    .join('');
+    control.id = controlId;
+    control.setAttribute('data-control', key);
+    if (key === 'boxOption') {
+      field.append(label, control);
+    }
+    elements.controls.appendChild(field);
+  });
 
   elements.controls.querySelectorAll('[data-control]').forEach((input) => {
     input.addEventListener('input', (event) => {

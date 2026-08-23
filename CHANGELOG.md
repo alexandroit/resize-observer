@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Rebuilt every versioned demo control panel with DOM APIs instead of HTML
+  reinterpretation, preserving the same controls and behavior.
 - Added a package-specific security policy, confidential reporting path, and
   shipped security guidance.
 
