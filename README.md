@@ -202,6 +202,11 @@ npm publish --access public
 
 ---
 
+## Security
+
+Report vulnerabilities privately by following [SECURITY.md](SECURITY.md). Do
+not disclose exploit details in a public issue.
+
 ## License
 
 Apache-2.0. See [LICENSE](LICENSE).

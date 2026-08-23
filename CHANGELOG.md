@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Added a package-specific security policy, confidential reporting path, and
+  shipped security guidance.
+
 ## 1.0.1 - 2026-08-19
 
 - preserved the upstream Juggle v3 observer algorithm and the three existing named exports
