@@ -556,6 +556,7 @@ pre {
 }
 
 .ref-card {
+  min-width: 0;
   padding: 1rem;
   border: 1px solid #d9e2ec;
   border-radius: 18px;
@@ -670,6 +671,11 @@ pre {
 }
 
 @media (max-width: 980px) {
+  .api-table {
+    display: block;
+    overflow-x: auto;
+  }
+
   .hero,
   .example-explorer,
   .ref-grid,
