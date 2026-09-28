@@ -23,6 +23,7 @@ Files
 -----
 - resize-observer.browser.js
 - LICENSE
+- SECURITY.md
 - README.md
 
 Script tag usage
@@ -50,6 +51,7 @@ await fs.mkdir(bundleDir, { recursive: true });
 
 await fs.copyFile(path.join(rootDir, "README.md"), path.join(bundleDir, "README.md"));
 await fs.copyFile(path.join(rootDir, "LICENSE"), path.join(bundleDir, "LICENSE"));
+await fs.copyFile(path.join(rootDir, "SECURITY.md"), path.join(bundleDir, "SECURITY.md"));
 await fs.copyFile(
   path.join(rootDir, "lib", "exports", "resize-observer.browser.js"),
   path.join(bundleDir, "resize-observer.browser.js")
@@ -78,6 +80,7 @@ Each archive contains:
 - \`resize-observer.browser.js\`
 - \`README.md\`
 - \`LICENSE\`
+- \`SECURITY.md\`
 - \`INSTALLATION.txt\`
 `;
 

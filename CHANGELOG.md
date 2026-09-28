@@ -1,6 +1,10 @@
 # Changelog
 
-## Unreleased
+## 1.0.2 - 2026-09-28
+
+- Organize the README with package links and the Stackline Reddit community.
+- Refine npm discovery keywords and publish verified artifacts through GitHub Actions.
+- Update development-only humanfs, fast-uri, and js-yaml to compatible patched releases.
 
 - Rebuilt every versioned demo control panel with DOM APIs instead of HTML
   reinterpretation, preserving the same controls and behavior.

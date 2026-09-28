@@ -1,6 +1,6 @@
 {
   "name": "@stackline/resize-observer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Polyfills the ResizeObserver API and supports box size options from the latest spec",
   "type": "commonjs",
   "main": "lib/exports/resize-observer.umd.js",
@@ -56,24 +56,19 @@
     "url": "git+https://github.com/alexandroit/resize-observer.git"
   },
   "keywords": [
+    "stackline",
     "resize-observer",
     "polyfill",
     "ponyfill",
-    "browser",
-    "dom",
+    "element-resize",
     "resize",
     "observer",
+    "dom",
+    "browser",
     "typescript",
     "javascript",
-    "element",
-    "element-resize",
-    "responsive",
     "web-components",
-    "ui",
-    "angular",
-    "react",
-    "vue",
-    "maintained"
+    "responsive"
   ],
   "author": "Alexandro Paixao Marques",
   "contributors": [
