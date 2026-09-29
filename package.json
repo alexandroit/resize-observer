@@ -1,6 +1,6 @@
 {
   "name": "@stackline/resize-observer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Polyfills the ResizeObserver API and supports box size options from the latest spec",
   "type": "commonjs",
   "main": "lib/exports/resize-observer.umd.js",
@@ -83,7 +83,7 @@
     "node": ">=18"
   },
   "devDependencies": {
-    "@types/jest": "^30.0.0",
+    "@types/jest": "npm:@stackline/types-jest@1.0.0",
     "esbuild": "^0.28.2",
     "eslint": "^10.8.1",
     "typescript-eslint": "^8.67.0",

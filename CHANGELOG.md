@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.3 - 2026-09-29
+
+- Replace `@types/jest` with exact alias `npm:@stackline/types-jest@1.0.0`, preserving existing import names.
+- Preserve the public API and existing runtime/compiler compatibility.
+
 ## 1.0.2 - 2026-09-28
 
 - Organize the README with package links and the Stackline Reddit community.
