@@ -4,13 +4,13 @@
 
 [![npm version](https://img.shields.io/npm/v/@stackline/resize-observer.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/resize-observer)
 [![license](https://img.shields.io/npm/l/@stackline/resize-observer.svg?style=flat-square)](https://github.com/alexandroit/resize-observer)
-[![GitHub repository](https://img.shields.io/badge/GitHub-alexandroit%2Fresize-observer-181717?style=flat-square&logo=github)](https://github.com/alexandroit/resize-observer)
+[![GitHub repository](https://img.shields.io/badge/GitHub-repository-181717?style=flat-square&logo=github)](https://github.com/alexandroit/resize-observer)
 [![Docs](https://img.shields.io/badge/docs-alexandro.net-0f766e?style=flat-square)](https://alexandro.net/docs/vanilla/resize-observer/)
 [![Reddit community](https://img.shields.io/badge/community-r%2FStackline-ff4500?style=flat-square&logo=reddit&logoColor=white)](https://www.reddit.com/r/Stackline/)
 
 **[Documentation](https://alexandro.net/docs/vanilla/resize-observer/)** | **[npm](https://www.npmjs.com/package/@stackline/resize-observer)** | **[Issues](https://github.com/alexandroit/resize-observer/issues)** | **[Repository](https://github.com/alexandroit/resize-observer)**
 
-**Current package version:** `1.0.4`
+**Current package version:** `1.0.5`
 
 ---
 
@@ -22,7 +22,7 @@
 
 | Item | Value |
 | :--- | :--- |
-| Package | `@stackline/resize-observer@1.0.4` |
+| Package | `@stackline/resize-observer@1.0.5` |
 | API target | `See the package-specific API reference` |
 | Supported Node.js | `>=18` |
 | License | `Apache-2.0` |
@@ -45,7 +45,7 @@ npm install @stackline/resize-observer
 
 **[Documentation & Live Demos](https://alexandro.net/docs/vanilla/resize-observer/)** | **[npm](https://www.npmjs.com/package/@stackline/resize-observer)** | **[GitHub Download](https://github.com/alexandroit/resize-observer/tree/v3/downloads)** | **[Issues](https://github.com/alexandroit/resize-observer/issues)** | **[Repository](https://github.com/alexandroit/resize-observer)**
 
-**Latest version:** `1.0.3`
+**Latest version:** `1.0.5`
 
 ---
 
@@ -95,7 +95,8 @@ GitHub Pages delivery.
 
 | Package version | Maintained line | Runtime target | TypeScript declarations | Demo link |
 | :---: | :---: | :--- | :--- | :--- |
-| **1.0.3** | **Current** | **ESM, CommonJS, and browser global** | **TypeScript 3.9+** | [ResizeObserver 1.0.3 docs](https://alexandro.net/docs/vanilla/resize-observer/v1.0.3/) |
+| **1.0.5** | **Current** | **ESM, CommonJS, and browser global** | **TypeScript 3.9+** | [ResizeObserver 1.0.5 docs](https://alexandro.net/docs/vanilla/resize-observer/) |
+| **1.0.3** | Previous | **ESM, CommonJS, and browser global** | **TypeScript 3.9+** | [ResizeObserver 1.0.3 docs](https://alexandro.net/docs/vanilla/resize-observer/v1.0.3/) |
 | 1.0.2 | Previous | ESM, CommonJS, and browser global | TypeScript 3.9+ | [ResizeObserver 1.0.2 docs](https://alexandro.net/docs/vanilla/resize-observer/v1.0.2/) |
 | 1.0.1 | Previous | ESM, CommonJS, and browser global | TypeScript 3.9+ | [ResizeObserver 1.0.1 docs](https://alexandro.net/docs/vanilla/resize-observer/v1.0.1/) |
 | 1.0.0 | Previous stable baseline | ESM for bundlers and UMD/CommonJS | TypeScript declarations | [ResizeObserver 1.0.0 docs](https://alexandro.net/docs/vanilla/resize-observer/v1.0.0/) |
