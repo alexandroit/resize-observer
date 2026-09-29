@@ -4,7 +4,7 @@
     {
       "name": "@stackline/resize-observer",
       "path": "README.md",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "baselineVersion": "1.0.3",
       "keywords": [
         "stackline",
@@ -26,8 +26,8 @@
       "homepage": "https://alexandro.net/docs/vanilla/resize-observer/",
       "baselineTarball": "https://registry.npmjs.org/@stackline/resize-observer/-/resize-observer-1.0.3.tgz",
       "baselineIntegrity": "sha512-r+6WQz8pME+HMo8PQ5iAGqJgdA0nwV7ZIJUmouYrfaKn932PuJkQBSdgWikc75SjqRenGeCRe4So3Jn4Ai0Njg==",
-      "expectedSha512": "7aa24a3cbde6e42144a1fd66cb59d3ed6e490475c3dfd1deca1b2e944997c93a1a320d1188a170c6479d72ed40e24238bdd51b03848604ac8cac8f321e7d5434",
-      "tag": "docs-stackline-resize-observer-v1.0.4"
+      "expectedSha512": "fa253451d388103cf4054f4d143e42cc4492b821f4e5a83000391e54cabc17fc31e7dc530ca5169eb0711c5e4e667df3341a27191b126e8b61522c31a3ef0c48",
+      "tag": "docs-stackline-resize-observer-v1.0.5"
     }
   ]
 }
