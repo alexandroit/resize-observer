@@ -1,0 +1,33 @@
+{
+  "repository": "alexandroit/resize-observer",
+  "packages": [
+    {
+      "name": "@stackline/resize-observer",
+      "path": "README.md",
+      "version": "1.0.4",
+      "baselineVersion": "1.0.3",
+      "keywords": [
+        "stackline",
+        "npm-package",
+        "resize-observer",
+        "typescript",
+        "nodejs",
+        "polyfill",
+        "ponyfill",
+        "element-resize",
+        "resize",
+        "observer",
+        "dom",
+        "browser",
+        "javascript",
+        "web-components",
+        "responsive"
+      ],
+      "homepage": "https://alexandro.net/docs/vanilla/resize-observer/",
+      "baselineTarball": "https://registry.npmjs.org/@stackline/resize-observer/-/resize-observer-1.0.3.tgz",
+      "baselineIntegrity": "sha512-r+6WQz8pME+HMo8PQ5iAGqJgdA0nwV7ZIJUmouYrfaKn932PuJkQBSdgWikc75SjqRenGeCRe4So3Jn4Ai0Njg==",
+      "expectedSha512": "7aa24a3cbde6e42144a1fd66cb59d3ed6e490475c3dfd1deca1b2e944997c93a1a320d1188a170c6479d72ed40e24238bdd51b03848604ac8cac8f321e7d5434",
+      "tag": "docs-stackline-resize-observer-v1.0.4"
+    }
+  ]
+}
