@@ -1,6 +1,6 @@
 {
   "name": "@stackline/resize-observer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Polyfills the ResizeObserver API and supports box size options from the latest spec",
   "type": "commonjs",
   "main": "lib/exports/resize-observer.umd.js",
@@ -57,7 +57,10 @@
   },
   "keywords": [
     "stackline",
+    "npm-package",
     "resize-observer",
+    "typescript",
+    "nodejs",
     "polyfill",
     "ponyfill",
     "element-resize",
@@ -65,7 +68,6 @@
     "observer",
     "dom",
     "browser",
-    "typescript",
     "javascript",
     "web-components",
     "responsive"

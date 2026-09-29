@@ -1,15 +1,47 @@
 # @stackline/resize-observer
 
+> Polyfills the ResizeObserver API and supports box size options from the latest spec.
+
+[![npm version](https://img.shields.io/npm/v/@stackline/resize-observer.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/resize-observer)
+[![license](https://img.shields.io/npm/l/@stackline/resize-observer.svg?style=flat-square)](https://github.com/alexandroit/resize-observer)
+[![GitHub repository](https://img.shields.io/badge/GitHub-alexandroit%2Fresize-observer-181717?style=flat-square&logo=github)](https://github.com/alexandroit/resize-observer)
+[![Docs](https://img.shields.io/badge/docs-alexandro.net-0f766e?style=flat-square)](https://alexandro.net/docs/vanilla/resize-observer/)
+[![Reddit community](https://img.shields.io/badge/community-r%2FStackline-ff4500?style=flat-square&logo=reddit&logoColor=white)](https://www.reddit.com/r/Stackline/)
+
+**[Documentation](https://alexandro.net/docs/vanilla/resize-observer/)** | **[npm](https://www.npmjs.com/package/@stackline/resize-observer)** | **[Issues](https://github.com/alexandroit/resize-observer/issues)** | **[Repository](https://github.com/alexandroit/resize-observer)**
+
+**Current package version:** `1.0.4`
+
+---
+
+## Why this package?
+
+`@stackline/resize-observer` is maintained as part of the Stackline package collection. It is an independent continuation of [the original project](https://github.com/juggle/resize-observer); original authors and licenses remain credited below.
+
+## Compatibility
+
+| Item | Value |
+| :--- | :--- |
+| Package | `@stackline/resize-observer@1.0.4` |
+| API target | `See the package-specific API reference` |
+| Supported Node.js | `>=18` |
+| License | `Apache-2.0` |
+| Module type | `commonjs` |
+| Main entry | `lib/exports/resize-observer.umd.js` |
+| Module entry | `lib/exports/resize-observer.mjs` |
+| Types | `lib/exports/resize-observer.d.ts` |
+| Runtime dependencies | `none` |
+
+## Installation
+
+```bash
+npm install @stackline/resize-observer
+```
+
+## Usage and API reference
+
 > A maintained **ResizeObserver ponyfill** for browser applications, with support for `content-box`, `border-box`, and `device-pixel-content-box` observations, TypeScript declarations, ESM and UMD bundles, and versioned docs for every published Stackline release.
 
-[![npm version](https://img.shields.io/npm/v/%40stackline%2Fresize-observer.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/resize-observer)
-[![npm downloads](https://img.shields.io/npm/dt/%40stackline%2Fresize-observer.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/resize-observer)
-[![npm monthly](https://img.shields.io/npm/dm/%40stackline%2Fresize-observer.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/resize-observer)
-[![license](https://img.shields.io/npm/l/%40stackline%2Fresize-observer.svg?style=flat-square)](https://github.com/alexandroit/resize-observer/blob/HEAD/LICENSE)
-[![JavaScript ES2018+](https://img.shields.io/badge/JavaScript-ES2018%2B-f7df1e?style=flat-square&logo=javascript&logoColor=111)](https://developer.mozilla.org/docs/Web/JavaScript)
-[![TypeScript typings](https://img.shields.io/badge/TypeScript-3.9%2B-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
-[![GitHub stars](https://img.shields.io/github/stars/alexandroit/resize-observer.svg?style=flat-square)](https://github.com/alexandroit/resize-observer/stargazers)
-[![Reddit community](https://img.shields.io/badge/community-r%2FStackline-ff4500?style=flat-square&logo=reddit&logoColor=white)](https://www.reddit.com/r/Stackline/)
 
 **[Documentation & Live Demos](https://alexandro.net/docs/vanilla/resize-observer/)** | **[npm](https://www.npmjs.com/package/@stackline/resize-observer)** | **[GitHub Download](https://github.com/alexandroit/resize-observer/tree/v3/downloads)** | **[Issues](https://github.com/alexandroit/resize-observer/issues)** | **[Repository](https://github.com/alexandroit/resize-observer)**
 
@@ -235,3 +267,23 @@ Apache-2.0. See [LICENSE](LICENSE).
 - Original project: Juggle
 - Upstream repository: https://github.com/juggle/resize-observer
 - Maintained by: Alexandroit
+
+## Credits and original authors
+
+- Original project: [resize-observer](https://github.com/juggle/resize-observer).
+- Alexandro Paixao Marques.
+- Juggle.
+- Copyright 2019 JUGGLE LTD.
+- Stackline maintenance: [Alexandro Paixao Marques](https://www.linkedin.com/in/aleinfo/) and [Stackline contributors](https://github.com/alexandroit).
+
+Original copyright, license notices and contributor acknowledgements remain part of this distribution. Stackline maintenance does not replace authorship of the original work.
+
+## Community and Links
+
+- [Stackline website](https://alexandro.net/)
+- [GitHub projects](https://github.com/alexandroit)
+- [npm packages](https://www.npmjs.com/~alex360qc)
+- [Reddit community — r/Stackline](https://www.reddit.com/r/Stackline/)
+- [Maintainer LinkedIn](https://www.linkedin.com/in/aleinfo/)
+
+Use this repository's issue tracker for reproducible bugs and feature requests. Join r/Stackline for examples, usage questions and release discussions.
