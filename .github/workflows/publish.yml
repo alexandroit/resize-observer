@@ -52,6 +52,7 @@ jobs:
       - name: Pin the npm installer and packer
         run: npm install --global npm@11.19.0
       - run: npm ci
+      - run: node --test scripts/registry-requests.node-check.mjs
       - run: npm run check
       - name: Reject an existing public version
         shell: bash
