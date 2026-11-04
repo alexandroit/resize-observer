@@ -28,9 +28,11 @@ if (!selectedVersionDirs.length) {
 rmSync(docsDir, { force: true, recursive: true });
 
 const displayedVersionDirs = buildAll ? versionDirs : selectedVersionDirs;
+const currentMajor = packageJson.version.split('.')[0];
+const packageVersionDirs = displayedVersionDirs.filter((dir) => dir.startsWith(`v${currentMajor}.`));
 const latestVersionDir = displayedVersionDirs.includes(packageVersionDir)
   ? packageVersionDir
-  : displayedVersionDirs[displayedVersionDirs.length - 1];
+  : (packageVersionDirs.length ? packageVersionDirs : displayedVersionDirs).at(-1);
 
 mkdirSync(docsDir, { recursive: true });
 writeFileSync(path.join(docsDir, '.nojekyll'), '', 'utf8');
@@ -49,6 +51,7 @@ for (const versionDir of selectedVersionDirs) {
     format: 'iife',
     platform: 'browser',
     target: ['es2018'],
+    treeShaking: false,
     minify: true
   });
 

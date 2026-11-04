@@ -10,7 +10,7 @@
 
 **[Documentation](https://alexandro.net/docs/vanilla/resize-observer/)** | **[npm](https://www.npmjs.com/package/@stackline/resize-observer)** | **[Issues](https://github.com/alexandroit/resize-observer/issues)** | **[Repository](https://github.com/alexandroit/resize-observer)**
 
-**Current package version:** `1.0.5`
+**Current package version:** `1.0.6`
 
 ---
 
@@ -22,7 +22,7 @@
 
 | Item | Value |
 | :--- | :--- |
-| Package | `@stackline/resize-observer@1.0.5` |
+| Package | `@stackline/resize-observer@1.0.6` |
 | API target | `See the package-specific API reference` |
 | Supported Node.js | `>=18` |
 | License | `Apache-2.0` |
@@ -45,7 +45,7 @@ npm install @stackline/resize-observer
 
 **[Documentation & Live Demos](https://alexandro.net/docs/vanilla/resize-observer/)** | **[npm](https://www.npmjs.com/package/@stackline/resize-observer)** | **[GitHub Download](https://github.com/alexandroit/resize-observer/tree/v3/downloads)** | **[Issues](https://github.com/alexandroit/resize-observer/issues)** | **[Repository](https://github.com/alexandroit/resize-observer)**
 
-**Latest version:** `1.0.5`
+**Latest version:** `1.0.6`
 
 ---
 
@@ -95,7 +95,7 @@ GitHub Pages delivery.
 
 | Package version | Maintained line | Runtime target | TypeScript declarations | Demo link |
 | :---: | :---: | :--- | :--- | :--- |
-| **1.0.5** | **Current** | **ESM, CommonJS, and browser global** | **TypeScript 3.9+** | [ResizeObserver 1.0.5 docs](https://alexandro.net/docs/vanilla/resize-observer/) |
+| **1.0.6** | **Current** | **ESM, CommonJS, and browser global** | **TypeScript 3.9+** | [ResizeObserver 1.0.6 docs](https://alexandro.net/docs/vanilla/resize-observer/) |
 | **1.0.3** | Previous | **ESM, CommonJS, and browser global** | **TypeScript 3.9+** | [ResizeObserver 1.0.3 docs](https://alexandro.net/docs/vanilla/resize-observer/v1.0.3/) |
 | 1.0.2 | Previous | ESM, CommonJS, and browser global | TypeScript 3.9+ | [ResizeObserver 1.0.2 docs](https://alexandro.net/docs/vanilla/resize-observer/v1.0.2/) |
 | 1.0.1 | Previous | ESM, CommonJS, and browser global | TypeScript 3.9+ | [ResizeObserver 1.0.1 docs](https://alexandro.net/docs/vanilla/resize-observer/v1.0.1/) |
